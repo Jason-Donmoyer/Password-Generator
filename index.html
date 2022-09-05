@@ -4,26 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
   
   <title>Frontend Mentor | Password generator app</title>
 </head>
-<body>
+<body class="main-container">
 
-  Password Generator
+  <!-- Main Content Container Start -->
+  <main class="main-content-container">
 
-  P4$5W0rD!
+    <h1 class="main-headline">Password Generator</h1>
 
-  Character Length
+    <!-- Password Container Start -->
+    <section class="password-container">
+      <div id="passwordContainerCopy" class="password-container-copy">P4$5W0rD!</div>
+      <div class="icon-copy"></div>
+    </section>
+    <!-- Password Container End -->
 
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
+    <!-- Password Generator Container Start -->
+    <section class="password-generator-container">
 
-  Strength
+      <!-- Character Length Container Start -->
+      <div class="char-length-container">
+        <div class="char-length-copy-container">
+          <p class="char-length-copy">Character Length</p>
+          <p id="charLengthValue" class="char-length-value">10</p>
+        </div>
+        <div class="char-length-slider">
+          <input type="range" min="1" max="20" value="10" oninput="charLengthValue.innerText = this.value">
+        </div>
+      </div>
+      <!-- Character Length Container End -->
 
-  Generate
+      <!-- Password Options Container Start -->
+      <div class="password-options-container">
+
+        <!-- Include Uppercase Letters Start -->
+        <input id="includeUppercase" class="checkbox" type="checkbox" checked="checked">
+        <label for="includeUppercase" class="options-label">Include Uppercase Letters</label>
+        <br>
+        <!-- Include Uppercase Letter End -->
+
+        <!-- Include Lowercase Letters Start -->
+        <input id="includeLowercase" class="checkbox" type="checkbox" checked="checked">
+        <label for="includeLowercase" class="options-label">Include Lowercase Letters</label>
+        <br>
+        <!-- Include Lowercase letters End -->
+
+        <!-- Include Numbers Start -->
+        <input id="includeNumbers" class="checkbox" type="checkbox" checked="checked">
+        <label for="includeNumbers" class="options-label">Include Numbers</label>
+        <br>
+        <!-- Include Numbers End -->
+
+        <!-- Include Symbols Start -->
+        <input id="includeSymbols" class="checkbox" type="checkbox">
+        <label for="includeSymbols" class="options-label">Include Symbols</label>
+        <br>
+        <!-- Include Symbols End -->
+
+      </div>
+      <!-- Password Options Container End -->
+
+      <!-- Password Strength Container Start -->
+      <div class="password-strength-container">
+        <p class="strength-copy">Strength</p>
+        <div class="strength-chart-container">
+          <p id="StrengthChartCopy" class="strength-chart-copy">MEDIUM</p>
+          <div class="strength-chart">
+            <div id="barOne" class="bar"></div>
+            <div id="barTwo" class="bar"></div>
+            <div id="barThree" class="bar"></div>
+            <div id="barFour" class="bar"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Password Strength Container End -->
+
+      <!-- Generate Button Start -->
+      <div id="generateBtn" class="generate-button">
+        <p class="generate-btn-copy">Generate</p>
+        <div class="icon-arrow-right"></div>
+      </div>
+      <!-- Generate Button End -->
+
+    </section>
+    <!-- Password Generator Container End -->
+
+  </main>
+  <!-- Main Content Container End -->
+
+
+  
+
+  <script src="main.js"></script>
 
 </body>
 </html>
