@@ -1,0 +1,102 @@
+/*************************************************************************/
+                            /* IMPORTS */
+/*************************************************************************/
+
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+/* font-family: 'JetBrains Mono', monospace; */
+
+
+/*************************************************************************/
+                           /* VARIABLES */
+/*************************************************************************/
+
+
+:root {
+
+
+  /* COLORS */
+  --very-dark-grey: hsl(248, 15%, 11%);
+  --dark-grey: hsl(248, 10%, 15%);
+  --grey: hsl(251, 9%, 53%);
+  --almost-white: hsl(252, 11%, 91%);
+  --neon-green: hsl(127, 100%, 82%);
+  --yellow: hsl(42, 91%, 68%);
+  --orange: hsl(13, 95%, 66%);
+  --red: hsl(0, 91%, 63%);
+
+  /* FONTS */
+  --main-font-family: 'JetBrains Mono', monospace;
+
+
+}
+
+
+/*************************************************************************/
+                          /* MAIN STYLES */
+/*************************************************************************/
+
+
+/* html */
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* body */
+.main-container {
+  font-family: var(--main-font-family);
+  font-weight: 700;
+  background-color: var(--very-dark-grey);
+  color: var(--almost-white);
+}
+
+
+/* Main Content Container */
+.main-content-container {
+  width: 21.4375rem;
+  margin: 1rem auto 0rem auto;
+}
+
+
+/* h1 */
+.main-headline {
+  margin-top: 4rem;
+  line-height: 1.3125rem;
+  color: var(--grey);
+  text-align: center;
+}
+
+
+/* Password Container */
+.password-container {
+  height: 4rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--dark-grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Password Container Copy */
+.password-container-copy {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+
+/* Icon Copy */
+.icon-copy {
+  width: 1.09375rem;
+  height: 1.25rem;
+  background-image: url(../assets/images/icon-copy.svg);
+  background-size: cover;
+}
