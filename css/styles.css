@@ -100,3 +100,114 @@ html {
   background-image: url(../assets/images/icon-copy.svg);
   background-size: cover;
 }
+
+
+/* Password Generator Container */
+.password-generator-container {
+  padding: 1rem;
+  background-color: var(--dark-grey);
+}
+
+
+/* Character Length Container */
+.char-length-container {
+  height: 4.1875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Character Length Copy Container */
+.char-length-copy-container {
+  height: 1.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Character Length Copy */
+.char-length-copy {
+  line-height: 1.3125rem;
+}
+
+
+/* Character Length value */
+.char-length-value {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--neon-green);
+}
+
+
+/* Character Length Slider */
+.char-length-slider {
+  /* min-width: 100%; */
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+}
+
+
+/* Character Length Slider Input */
+.char-length-slider input[type="range"] {
+  -webkit-appearance: none;
+  /* background: rgba(255, 255, 255, 0.6); */
+  /* background-image: linear-gradient(var(--neon-green) var(--neon-green)); */
+  background-size: 50% 50%;
+  width: 100%;
+  height: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.char-length-slider input[type="range"]::-webkit-slider-runnable-track {
+  appearance: none !important;
+  background-color: var(--neon-green); 
+  height: 0.5rem;
+  line-height: 1.75rem;  
+  /* -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent; */
+}
+
+
+.char-length-slider input[type="range"]::-webkit-slider-thumb {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: white;
+}
+
+
+/* Password Options Container */
+.password-options-container {
+  height: 8.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Password Strength Container */
+.password-strength-container {
+  height: 3.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Generate Button */
+.generate-button {
+  height: 3.5rem;
+  background-color: var(--neon-green);
+  color: var(--dark-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
