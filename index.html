@@ -37,7 +37,7 @@
           <p id="charLengthValue" class="char-length-value">10</p>
         </div>
         <div class="char-length-slider">
-          <input type="range" min="1" max="20" value="10" oninput="charLengthValue.innerText = this.value">
+          <input id="rangeSlider" type="range" min="1" max="20" value="10">
         </div>
       </div>
       <!-- Character Length Container End -->
@@ -82,9 +82,9 @@
         <div class="strength-chart-container">
           <p id="StrengthChartCopy" class="strength-chart-copy">MEDIUM</p>
           <div class="strength-chart">
-            <div id="barOne" class="bar"></div>
-            <div id="barTwo" class="bar"></div>
-            <div id="barThree" class="bar"></div>
+            <div id="barOne" class="med-str bar"></div>
+            <div id="barTwo" class="med-str bar"></div>
+            <div id="barThree" class="med-str bar"></div>
             <div id="barFour" class="bar"></div>
           </div>
         </div>
@@ -104,8 +104,6 @@
   </main>
   <!-- Main Content Container End -->
 
-
-  
 
   <script src="main.js"></script>
 
