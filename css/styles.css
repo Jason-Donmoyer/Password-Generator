@@ -93,6 +93,12 @@ html {
 }
 
 
+/* Coppied Text */
+.coppied-text {
+  display: none;
+}
+
+
 /* Icon Copy */
 .icon-copy {
   width: 1.09375rem;

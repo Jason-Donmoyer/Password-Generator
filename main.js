@@ -1,6 +1,10 @@
 // VARIABLES
 
 
+// Copy to clipboard
+const copyBtn = document.getElementById('iconCopy');
+
+
 // Range Slider
 const rangeSlider = document.getElementById('rangeSlider');
 let charLengthVal = document.getElementById('charLengthValue');
@@ -33,6 +37,14 @@ const NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const SYMBOLS = ['!', '"', "'", '#', '$', '%', '&','(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '>', '?', '@', '[', '^', '_', '`', '{', '}', '|', '~'];
 
 
+// COPY TO CLIPBOARD FUNCTIONALITY
+copyBtn.addEventListener('click', () => {
+  let coppiedText = passwordContainer.innerHTML;
+  navigator.clipboard.writeText(coppiedText).then(() => {
+    alert('Coppied to clipboard');
+  });
+});
+
 
 // RANGE SLIDER FUNCTIONALITY
 
@@ -54,14 +66,20 @@ rangeSlider.addEventListener('mousemove', () => {
 
 // Check to see if all fields are empty
 document.addEventListener('change', () => {
-if (parseInt(charLengthVal.innerHTML) == 0 &&
-    !includeUppercase.checked &&
-    !includeLowercase.checked &&
-    !includeNumbers.checked &&
-    !includeSymbols.checked) {
-      passwordContainer.style.color = 'var(--grey)';
-      passwordStrengthCopy.style.display = 'none';
-      resetBarVal();
+  if (parseInt(charLengthVal.innerHTML) == 0 &&
+      !includeUppercase.checked &&
+      !includeLowercase.checked &&
+      !includeNumbers.checked &&
+      !includeSymbols.checked) {
+        passwordContainer.style.color = 'var(--grey)';
+        passwordStrengthCopy.style.display = 'none';
+        resetBarVal();
+      } else if (parseInt(charLengthVal.innerHTML) > 0 &&
+        (includeUppercase.checked ||
+         includeLowercase.checked ||
+         includeNumbers.checked ||
+         includeSymbols.checked)) {
+        passwordContainer.style.color = 'var(--almost-white)';
     }
   });
 
@@ -100,13 +118,15 @@ function generatePassword() {
   }
 
   passwordContainer.innerHTML = password;
-  passwordContainer.style.color = 'var(--almost-white)';
+  // passwordContainer.style.color = 'var(--almost-white)';
 
 
 
   // console.log([newArr, password, password.length, checkPasswordLength(password), checkLowercaseWeakness(password), checkUppercaseWeakness(password), checkNumberWeakness(password), checkSymbolsWeakness(password)]);
 
-  checkPasswordStrength(password);
+  // console.log(checkPasswordStrength(password));
+  // console.log(getStrengthString(checkPasswordStrength(password)));
+  changeBarChart(getStrengthString(checkPasswordStrength(password)));
 
 }
 
@@ -190,6 +210,27 @@ function checkTypeWeakness(password, regex) {
   }
 }
 
+
+// Get strength string
+function getStrengthString(num) {
+  let str = '';
+
+  if (num >= 50) {
+    str = 'TOO WEAK!';
+    passwordStrengthCopy.innerHTML = 'TOO WEAK!';
+  } else if (num >= 40 && num < 50) {
+    str = 'WEAK';
+    passwordStrengthCopy.innerHTML = 'WEAK';
+  } else if (num > 20 && num < 40) {
+    str = 'MEDIUM';
+    passwordStrengthCopy.innerHTML = 'MEDIUM';
+  } else if (num >= 20) {
+    str = 'STRONG';
+    passwordStrengthCopy.innerHTML = 'STRONG';
+  }
+
+  return str;
+}
 
 
 // Change strength values
