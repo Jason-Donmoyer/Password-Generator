@@ -3,6 +3,7 @@
 
 // Copy to clipboard
 const copyBtn = document.getElementById('iconCopy');
+const copyText = document.getElementById('coppiedText');
 
 
 // Range Slider
@@ -41,7 +42,8 @@ const SYMBOLS = ['!', '"', "'", '#', '$', '%', '&','(', ')', '*', '+', ',', '-',
 copyBtn.addEventListener('click', () => {
   let coppiedText = passwordContainer.innerHTML;
   navigator.clipboard.writeText(coppiedText).then(() => {
-    alert('Coppied to clipboard');
+    // copyText.style.display = 'block';
+    alert('Password has been copiied to clipboard!');
   });
 });
 
@@ -120,7 +122,7 @@ function generatePassword() {
   passwordContainer.innerHTML = password;
   // passwordContainer.style.color = 'var(--almost-white)';
 
-
+  // copyText.style.display = 'none';
 
   // console.log([newArr, password, password.length, checkPasswordLength(password), checkLowercaseWeakness(password), checkUppercaseWeakness(password), checkNumberWeakness(password), checkSymbolsWeakness(password)]);
 

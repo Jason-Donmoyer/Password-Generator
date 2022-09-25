@@ -93,8 +93,19 @@ html {
 }
 
 
+/* Icon Copy Container */
+.icon-copy-container {
+  display: flex;
+  align-items: center;
+}
+
+
 /* Coppied Text */
 .coppied-text {
+  margin-right: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: var(--neon-green);
   display: none;
 }
 
@@ -341,4 +352,137 @@ input[type="checkbox"]:checked::before {
   height: 0.75rem;
   margin-left: 1rem;
   background-image: url(../assets/images/icon-arrow-right.svg);
+}
+
+
+/*************************************************************************/
+                          /* MEDIA QUERIES */
+/*************************************************************************/
+
+
+/* Tablet */
+/* 768px iPad mini */
+@media screen and (min-width: 768px) {
+
+
+    /* h1 */
+  .main-headline {
+    margin-top: 8.3125rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+
+  /* Main Content Container */
+  .main-content-container {
+    width: 33.75rem;
+    margin: 1.9375rem auto 0rem auto;
+  }
+
+
+  /* Password Container */
+  .password-container {
+    height: 5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+
+  /* Password Container Copy */
+  .password-container-copy {
+    font-size: 2rem;
+    line-height: 2.625rem;
+  }
+
+
+  /* Icon Copy */
+  .icon-copy {
+    width: 1.3125rem;
+    height: 1.5rem;
+  }
+
+
+  /* Password Generator Container */
+  .password-generator-container {
+    padding: 1.5rem 2rem 2rem 2rem;
+  }
+
+
+  /* Character Length Container */
+  .char-length-container {
+    height: 5.4375rem;
+  }
+
+
+  /* Character Length Copy Container */
+  .char-length-copy-container {
+    height: 2.6875rem;
+  }
+
+
+  /* Character Length Copy */
+  .char-length-copy {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+
+  /* Character Length value */
+  .char-length-value {
+    font-size: 2rem;
+    line-height: 2.625rem;
+  }
+
+
+  /* Password Options Container */
+  .password-options-container {
+    height: 9.5rem;
+  }
+
+
+  /* Options Label */
+  .options-label {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    gap: 1.5rem;
+  }  
+
+
+  /* Password Strength Container */
+  .password-strength-container {
+    height: 4.5rem;
+    margin-bottom: 2rem;
+    padding-right: 1.96875rem;
+    padding-left: 2rem;
+  }
+
+
+  /* Strength Copy */
+  .strength-copy {
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
+  }
+
+
+  /* Strength Chart Copy */
+  .strength-chart-copy {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+
+  /* Generate Button */
+  .generate-button {
+    height: 4.0625rem;
+  }
+
+
+  /* Generate Button Copy */
+  .generate-btn-copy {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+ 
+
 }
