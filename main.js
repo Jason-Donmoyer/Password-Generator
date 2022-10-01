@@ -20,6 +20,8 @@ const includeSymbols = document.getElementById('includeSymbols');
 
 // Button
 const generatePasswordBtn = document.getElementById('generateBtn');
+const generateBtnCopy = document.getElementById('generateBtnCopy');
+const arrowRight = document.getElementById('iconArrowRight');
 
 
 // Password Output
@@ -38,15 +40,30 @@ const NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const SYMBOLS = ['!', '"', "'", '#', '$', '%', '&','(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '>', '?', '@', '[', '^', '_', '`', '{', '}', '|', '~'];
 
 
-// COPY TO CLIPBOARD FUNCTIONALITY
+// COPY TO CLIPBOARD FUNCTIONALITY FOR MOBILE AND TABLET
 copyBtn.addEventListener('click', () => {
   let coppiedText = passwordContainer.innerHTML;
   navigator.clipboard.writeText(coppiedText).then(() => {
-    // copyText.style.display = 'block';
-    alert('Password has been copiied to clipboard!');
+    alert('Password has been copied to clipboard!');
   });
 });
 
+
+// COPY TO CLIPBOARD FUNCTIONALITY FOR DESKTOP
+function copyToClipboard(desktopSize) {
+  if (desktopSize.matches) {
+    copyBtn.addEventListener('click', () => {
+      let coppiedText = passwordContainer.innerHTML;
+      navigator.clipboard.writeText(coppiedText).then(() => {
+        copyText.style.display = 'block';
+      });
+    });
+  }
+}
+
+let desktopSize = window.matchMedia('(min-width: 1280px)');
+copyToClipboard(desktopSize);
+desktopSize.addListener(copyToClipboard);
 
 // RANGE SLIDER FUNCTIONALITY
 
@@ -61,6 +78,27 @@ rangeSlider.addEventListener('mousemove', () => {
   let val = rangeSlider.value;
   let color = 'linear-gradient(90deg, var(--neon-green)' + val*5 + '%, var(--almost-white)' + val*5 + '%)';
   rangeSlider.style.background = color;            
+});
+
+
+// BUTTON HOVER EVENTS
+
+// mouseenter
+generatePasswordBtn.addEventListener('mouseenter', () => {
+  generatePasswordBtn.style.cursor = 'pointer';
+  generatePasswordBtn.style.backgroundColor = 'var(--dark-grey)';
+  generatePasswordBtn.style.border = '2px solid var(--neon-green)';
+  generateBtnCopy.style.color = 'var(--neon-green)';
+  arrowRight.style.backgroundImage = 'url(./assets/images/icon-arrow-right-hover.svg)';
+});
+
+
+// mouseleave
+generatePasswordBtn.addEventListener('mouseleave', () => {
+  generatePasswordBtn.style.backgroundColor = 'var(--neon-green)';
+  generatePasswordBtn.style.border = 'none';
+  generateBtnCopy.style.color = 'var(--dark-grey)';
+  arrowRight.style.backgroundImage = 'url(./assets/images/icon-arrow-right.svg)';
 });
 
 
@@ -84,6 +122,10 @@ document.addEventListener('change', () => {
         passwordContainer.style.color = 'var(--almost-white)';
     }
   });
+
+
+
+// MAIN CLICK FUNCTION
 
 // Button event listener
 generatePasswordBtn.addEventListener('click', generatePassword);
@@ -120,15 +162,9 @@ function generatePassword() {
   }
 
   passwordContainer.innerHTML = password;
-  // passwordContainer.style.color = 'var(--almost-white)';
 
-  // copyText.style.display = 'none';
-
-  // console.log([newArr, password, password.length, checkPasswordLength(password), checkLowercaseWeakness(password), checkUppercaseWeakness(password), checkNumberWeakness(password), checkSymbolsWeakness(password)]);
-
-  // console.log(checkPasswordStrength(password));
-  // console.log(getStrengthString(checkPasswordStrength(password)));
   changeBarChart(getStrengthString(checkPasswordStrength(password)));
+  copyText.style.display = 'none';
 
 }
 

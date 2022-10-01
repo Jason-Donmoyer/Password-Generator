@@ -461,7 +461,7 @@ input[type="checkbox"]:checked::before {
   /* Strength Copy */
   .strength-copy {
     font-size: 1.125rem;
-    line-height: 1.3125rem;
+    line-height: 1.5rem;
   }
 
 
@@ -484,5 +484,41 @@ input[type="checkbox"]:checked::before {
     line-height: 1.5rem;
   }
  
+
+}
+
+
+/* Laptop/Desktop */
+/* 1280px */
+@media screen and (min-width: 1280px) {
+
+
+  /* Active State */
+
+
+  /* Icon Copy */
+  .icon-copy:hover {
+    cursor: pointer;
+    background-image: url(../assets/images/icon-copy-hover.svg);
+  }
+
+
+  /* Character Length Slider Thumb */
+  input[type="range"]::-webkit-slider-thumb:hover {
+    cursor: pointer;
+    background-color: var(--very-dark-grey);
+    border: 2px solid var(--neon-green);
+  }
+
+
+  /* Input[type="checkbox"] */
+  input[type="checkbox"]:hover {
+    cursor: pointer;
+    border-color: var(--neon-green);
+  }
+
+
+  
+
 
 }
